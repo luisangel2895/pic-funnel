@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="./images/favicon.png"/>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- My styles -->
+    <link rel="stylesheet" href="styles.css">
+    <title>PIC-FUNNEL</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => { 
+
+          //FECHA DEL CURSO -> FORMATO [MES/DIA/YEAR HORA:MIN AM/PM]
+          const DATE_TARGET = new Date('10/1/2021 0:01 AM');
+          
+          // CODE
+          const SPAN_DAYS = document.querySelector('span#days');
+          const SPAN_HOURS = document.querySelector('span#hours');
+          const SPAN_MINUTES = document.querySelector('span#minutes');
+          const SPAN_SECONDS = document.querySelector('span#seconds');
+
+          const MILLISECONDS_OF_A_SECOND = 1000;
+          const MILLISECONDS_OF_A_MINUTE = MILLISECONDS_OF_A_SECOND * 60;
+          const MILLISECONDS_OF_A_HOUR = MILLISECONDS_OF_A_MINUTE * 60;
+          const MILLISECONDS_OF_A_DAY = MILLISECONDS_OF_A_HOUR * 24
+
+          function updateCountdown() {
+              // Calcs
+              const NOW = new Date()
+              const DURATION = DATE_TARGET - NOW;
+              const REMAINING_DAYS = Math.floor(DURATION / MILLISECONDS_OF_A_DAY);
+              const REMAINING_HOURS = Math.floor((DURATION % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
+              const REMAINING_MINUTES = Math.floor((DURATION % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
+              const REMAINING_SECONDS = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
+              SPAN_DAYS.textContent = REMAINING_DAYS;
+              SPAN_HOURS.textContent = REMAINING_HOURS;
+              SPAN_MINUTES.textContent = REMAINING_MINUTES;
+              SPAN_SECONDS.textContent = REMAINING_SECONDS;
+          }
+          updateCountdown();
+          setInterval(updateCountdown, MILLISECONDS_OF_A_SECOND);
+      });
+      </script>
+  </head>
+  <body>
+    <div class="modal fade" id="guideModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-modal-guia__title text-center">¡Descarga tu Guía de Importación!</div>
+                <div class="container-modal-guia__subtitle text-center"><span class="modal-guia-subtitle__inner">Completamente Gratis</span></div>
+                <div class="container text-center">
+                    <img src="./images/guia.png" alt="" width="70%">
+                </div>
+                <div class="container-modal-guia__text px-5" style="margin-bottom: -25px;">Te enviaremos la guía a tu correo, no olvides revisar la sección de <strong>PROMOCIONES</strong> en tu bandeja de entrada. </div>
+                <!--JB Tracker--> <script type="text/javascript"> var _paq = _paq || []; (function(){ if(window.apScriptInserted) return; _paq.push(['clientToken', 'P%2bsIjEMd6oQ%3d']); var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.async=true; g.defer=true; g.src='https://prod.benchmarkemail.com/tracker.bundle.js'; s.parentNode.insertBefore(g,s); window.apScriptInserted=true;})(); </script> <!--/JB Tracker--> <!-- BEGIN: Benchmark Email Signup Form Code -->
+                <script type="text/javascript" id="lbscript1601006" src="https://lb.benchmarkemail.com//es/code/lbformnew.js?mFcQnoBFKMT6DM6G2FKAXBcwvUXpuXVDxFuJBxCXGV86dksk0hrwdw%253D%253D"></script><noscript>Please enable JavaScript <br /><div align="center" style="padding-top:5px;font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#999999;"><a href="//www.benchmarkemail.com/es" target="_new" style="text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-size:10px;color:#999999;">Servicios de Email Marketing</a> por Benchmark</div></noscript>
+                <!-- END: Benchmark Email Signup Form Code -->
+                <div class="escondedor" style="background-color: white; height: 20px; position:absolute; margin-top: -30px; width: 90%;"></div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content modal-payment-container">
+            <div class="modal-header modal-payment-container-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body payment-container">
+                <div class="payment-container-logo mx-auto d-flex flex-row justify-content-center">
+                    <div class="payment-content-logo__logo">
+                        <img src="./images/logopiccargo.svg" alt="" width="200">
+                    </div>
+                </div>
+                <div class="container container-payment-form">
+                    <form action="">
+                        <div class="container containeiner-card-number">
+                            <label for="numberCard" class="">Numero de la Tarjeta</label>
+                            <input type="text" class="payment-form" id="numberCard">
+                            <div class="invalid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="container container-card-data">
+                            <div class="row">
+                                <div class="col-4 align-self-end">
+                                    <label for="expirationMonth" class="">State</label>
+                                    <select class="payment-form" id="expirationMonth" required>
+                                        <option selected disabled value="">mes</option>
+                                        <option>Enero</option>
+                                        <option>Febrero</option>
+                                        <option>Marzo</option>
+                                        <option>Abril</option>
+                                        <option>Mayo</option>
+                                        <option>Junio</option>
+                                        <option>Julio</option>
+                                        <option>Agosto</option>
+                                        <option>Septiembre</option>
+                                        <option>Octubre</option>
+                                        <option>Noviembre</option>
+                                        <option>Diciembre</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Por favor seleccione un mes
+                                    </div>
+                                </div>
+                                <div class="col-3 align-self-end p-0">
+                                    <label for="expirationYear" class=""></label>
+                                    <select class="payment-form" id="expirationYear" required>
+                                        <option selected disabled value="">año</option>
+                                        <option>2021</option>
+                                        <option>2022</option>
+                                        <option>2023</option>
+                                        <option>2024</option>
+                                        <option>2025</option>
+                                        <option>2026</option>
+                                        <option>2027</option>
+                                        <option>2028</option>
+                                        <option>2029</option>
+                                        <option>2030</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Por favor sleccion eun año
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <label for="codeCard" class="">Codigo de Seguridad</label>
+                                    <input type="text" class="payment-form" id="codeCard">
+                                    <div class="invalid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr size="3">
+                        <div class="container container-card-titular">
+                            <label for="titularCard" class="">Nombre del Titular</label>
+                            <input type="text" class="payment-form" id="titularCard">
+                            <div class="invalid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="container container-button-payment text-center">
+                            <button type="submit" class="button-payment" data-bs-dismiss="modal">Pagar $/40</button>
+                        </div>
+                        <div class="container container-recordar-payment">
+                            <div class="form-check d-flex justify-content-center">
+                                <input class="form-check-input" type="checkbox" value="" id="rememberCard" required>
+                                <label class="form-check-label mx-2" for="rememberCard">
+                                    Recordar mi tarjeta (Visa y Mastercard)
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="./images/logo.jpg" alt="" height="30" class="align-text-top">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse d-lg-flex flex-lg-row justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link navbar__link" href="#video-section">Inscribete</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar__link" href="#testimonios-section">Testimonios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar__link" href="#temario-section">Temario</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar__link" href="#servicios-section">Servicios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar__link" href="#guia-section">Guia</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid" style="height: 63px;"></div>
+    <div class="container-fluid" id="video-section">
+        <div class="container-lg">
+            <div class="container title-container text-center">
+                <div class="title-container__title-1">¡ INGRESOS CON EL CURSO APRENDE A</div>
+                <div class="title-container__title-2">IMPORTAR EN 6 PASOS !</div>
+            </div>
+            <div class="container subtitle-container text-center d-flex justify-content-center">
+                <div class="subtitle-container__text d-flex justify-content-end">
+                    <div class="align-self-center">CURSO 100% PRACTICO</div>
+                </div>
+                <div class="subtitle-container__icon-zoom d-flex justify-content-start">
+                    <div class="container-icon-zoom__image"><img src="./icons/zoom.png" alt="" class="icon-zoom"></div>
+                    <div class="container-icon-zoom__banner align-self-center">.</div>
+                </div>
+            </div>
+            <div class="container text-center mt-2" style="font-family: 'Gotham'; font-weight: 700; font-size: 20px; margin-bottom: -10px; color: #929292;"> SOLO FALTAN</div>
+            <div class="container contador-container text-center d-flex justify-content-center">
+                <div class="contador-container__icon d-none d-md-flex">
+                    <img src="./icons/calendario.png" alt="" width="25">
+                </div>
+                <div class="contador-container__days align-self-end ms-2"><span id="days"></span> dias</div>
+                <div class="contador-container__separador align-self-end mx-2">|</div>
+                <div class="contador-container__minutes align-self-end"><span id="hours"></span> horas</div>
+                <div class="contador-container__separador align-self-end mx-2">|</div>
+                <div class="contador-container__seconds align-self-end"><span id="minutes"></span> minutos</div>
+                <div class="contador-container__separador align-self-end mx-2">|</div>
+                <div class="contador-container__seconds align-self-end"><span id="seconds"></span> segundos</div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                       <div class="container video-container d-none d-md-block">
+                            <div class="video-container__barra-top mx-auto"></div>
+                            <div class="container text-center py-1" style="width: 100%; background-color: #F7DA19;"><strong>Asegurate que tu audio se encuentre activado</strong> (Por favor esper que el video cargue)</div>
+                            <div class="video-container__video">
+                                <video width="100%" autoplay loop controls  muted style="width:100%;">
+                                    <source src="./video/video-funnel.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="video-container__barra-bottom mx-auto"></div>
+                       </div> 
+                    </div>
+                    <div class="col-12 col-lg-4 d-none d-lg-flex">
+                        <div class="container inscription-container d-flex flex-row justify-content-center">
+                            <div class="align-self-center">
+                                <div class="inscription-container__title">Inscribete Ya!</div>
+                                <hr size="5" style="background-color: black; margin-top: -5px;;">
+                                <div class="inscription-container__subtitle text-center">Inversion $40 (160 Soles)</div>
+                                <div class="inscription-container__button">
+                                    <button class="button-inscription" data-bs-toggle="modal" data-bs-target="#paymentModal">
+                                        <div class="container container-button-inscription">
+                                            <div class="button-inscription__text-1">Inscribete haciendo</div>
+                                            <div class="button-inscription__text-2">Click Aquí</div>
+                                        </div>
+                                    </button>
+                                </div>
+                                <div class="inscription-container-ahorra text-center">Ahorra 15 Dolares</div>
+                                <div class="inscription-container-valido text-center">valido: Septiembre 2021</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid d-block d-md-none mt-4">
+        <div class="container text-center py-1" style="width: 100%; background-color: #F7DA19;"><strong>Asegurate que tu audio se encuentre activado</strong> (Por favor esper que el video cargue)</div>
+        <div class="video-container__video">
+            <video width="100%" autoplay loop controls  muted style="width:100%;">
+                <source src="./video/video-funnel.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <div class="container d-flex d-lg-none justify-content-center">
+        <img src="./images/guia.png" alt="guia-importacion-mobile" class="imagen-guia-banner-mobile">
+    </div>
+    <div class="container-fluid" style="background-color: #1A3349;">
+        <div class="container-lg">
+            <div class="container-banner d-flex flex-row justify-content-center">
+                <div class="container-banner__book d-none d-lg-flex justify-content-end">
+                    <img src="./images/guia.png" alt="guia-importacion" class="imagen-guia-banner">
+                </div>
+                <div class="container-banner__content text-center">
+                    <div class="banner-content__title">Obten de forma <span style="color: #F5DC18;">GRATUITA</span> tu e-book</div>
+                    <div class="banner-content__subtitle">Aprendiendo a importar</div>
+                    <div class="banner-content__button">
+                        <button class="button-guide" data-bs-toggle="modal" data-bs-target="#guideModal">Descargar GRATIS</button>
+                    </div>
+                    <div class="banner-content__terminos">Al dejar tu correo electrónico estas suscribiendote a nuestra comunidad</div>
+                    <div class="banner-content__terminos">y recibira contenido gratuito y premium (de pago)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-lg d-flex d-lg-none" style="padding-top: 50px;">
+        <div class="container inscription-container d-flex flex-row justify-content-center">
+            <div class="align-self-center">
+                <div class="inscription-container__title">Inscribete Ya!</div>
+                <hr size="5" style="background-color: black; margin-top: -5px;;">
+                <div class="inscription-container__subtitle text-center">Inversión $40 (160 Soles)</div>
+                <div class="inscription-container__button">
+                    <button class="button-inscription" data-bs-toggle="modal" data-bs-target="#paymentModal">
+                        <div class="container container-button-inscription">
+                            <div class="button-inscription__text-1">Inscribete haciendo</div>
+                            <div class="button-inscription__text-2">Click Aquí</div>
+                        </div>
+                    </button>
+                </div>
+                <div class="inscription-container-ahorra text-center">Ahorra 15 Dolares</div>
+                <div class="inscription-container-valido text-center">valido: Septiembre 2021</div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="testimonios-section">
+        <div class="container-lg">
+            <div class="container container-testimonios">
+                <div class="container container-testimonios__title text-center">Testimonios</div>
+                <div class="container container-testimonios__subtitle text-center">Ellos confiaron en nosostros y ahora son importadores exitosos</div>
+                <div class="container container-testimonios-videos">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="container-testimonio">
+                                <div class="container-testimonio__video">
+                                    <iframe width="1280" height="721" src="https://www.youtube.com/embed/jRAIP-_WMcY" title="testimonio-importacion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="iframe-testimonio"></iframe>
+                                </div>
+                                <!-- <div class="container-testmonio__text">
+                                    <div class="testimonio-text__name">Maria camejo</div>
+                                    <div class="testimonio-text__cargo">Gerente de SS Computer</div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="container-testimonio">
+                                <div class="container-testimonio__video">
+                                    <iframe width="1280" height="721" src="https://www.youtube.com/embed/je6afWI1uSw" title="testimonio-importacion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="iframe-testimonio"></iframe>
+                                </div>
+                                <!-- <div class="container-testmonio__text">
+                                    <div class="testimonio-text__name">Maria camejo</div>
+                                    <div class="testimonio-text__cargo">Gerente de SS Computer</div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="container-testimonio">
+                                <div class="container-testimonio__video">
+                                    <iframe width="1280" height="721" src="https://www.youtube.com/embed/TuaWNQejEcU" title="testimonio-importacion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="iframe-testimonio"></iframe>
+                                </div>
+                                <!-- <div class="container-testmonio__text">
+                                    <div class="testimonio-text__name">Maria camejo</div>
+                                    <div class="testimonio-text__cargo">Gerente de SS Computer</div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="container-testimonio">
+                                <div class="container-testimonio__video">
+                                    <iframe width="1280" height="721" src="https://www.youtube.com/embed/TMLSrLss_6E" title="testimonio-importacion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="iframe-testimonio"></iframe>
+                                </div>
+                                <!-- <div class="container-testmonio__text">
+                                    <div class="testimonio-text__name">Maria camejo</div>
+                                    <div class="testimonio-text__cargo">Gerente de SS Computer</div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="container-testimonio">
+                                <div class="container-testimonio__video">
+                                    <iframe width="1280" height="721" src="https://www.youtube.com/embed/vo0nmkcayQU" title="testimonio-importacion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="iframe-testimonio"></iframe>
+                                </div>
+                                <!-- <div class="container-testmonio__text">
+                                    <div class="testimonio-text__name">Maria camejo</div>
+                                    <div class="testimonio-text__cargo">Gerente de SS Computer</div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="container-testimonio">
+                                <div class="container-testimonio__video">
+                                    <iframe width="1280" height="721" src="https://www.youtube.com/embed/HRvApW4FiGg" title="testimonio-importacion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="iframe-testimonio"></iframe>
+                                </div>
+                                <!-- <div class="container-testmonio__text">
+                                    <div class="testimonio-text__name">Maria camejo</div>
+                                    <div class="testimonio-text__cargo">Gerente de SS Computer</div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="container-testimonio">
+                                <div class="container-testimonio__video">
+                                    <iframe width="1280" height="721" src="https://www.youtube.com/embed/2xvaKwMKhMg" title="testimonio-importacion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="iframe-testimonio"></iframe>
+                                </div>
+                                <!-- <div class="container-testmonio__text">
+                                    <div class="testimonio-text__name">Maria camejo</div>
+                                    <div class="testimonio-text__cargo">Gerente de SS Computer</div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="container-testimonio">
+                                <div class="container-testimonio__video">
+                                    <iframe width="1280" height="721" src="https://www.youtube.com/embed/9X_Cb7NsHCE" title="testimonio-importacion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="iframe-testimonio"></iframe>
+                                </div>
+                                <!-- <div class="container-testmonio__text">
+                                    <div class="testimonio-text__name">Maria camejo</div>
+                                    <div class="testimonio-text__cargo">Gerente de SS Computer</div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="container-testimonio">
+                                <div class="container-testimonio__video">
+                                    <iframe width="1280" height="721" src="https://www.youtube.com/embed/TuaWNQejEcU" title="testimonio-importacion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="iframe-testimonio"></iframe>
+                                </div>
+                                <!-- <div class="container-testmonio__text">
+                                    <div class="testimonio-text__name">Maria camejo</div>
+                                    <div class="testimonio-text__cargo">Gerente de SS Computer</div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="background-color: #E8E8E8; margin-top: 80px;">
+        <div class="container-lg">
+            <div class="row container-banner-suscription">
+                <div class="col-12 col-lg-7">
+                    <div class="container">
+                        <div class="container-banner-suscription__title">
+                            <div class="d">Puedes ser uno de ellos</div>
+                            <div class="d">no pierdas esta oportunidad</div>
+                        </div>
+                        <div class="container-banner-suscription__subtitle">
+                            ¡Inscribete ahora!
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5 align-self-center">
+                    <div class="container container-banner-suscription__button">
+                        <button class="banner-suscription-button" data-bs-toggle="modal" data-bs-target="#paymentModal">
+                            <div class="banner-suscription-button__text-1">Inscribete haciendo</div>
+                            <div class="banner-suscription-button__text-2">Click Aquí</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" id="temario-section">
+        <div class="container-lg container-aprender">
+            <div class="container container-aprender-title text-center">
+                <div class="aprender-title__title">Que aprenderas en nuestro curso?</div>
+                <div class="aprender-title__subtitle"><span class="text-subtitle-pasos__resaltado">6 pasos</span> para importar de manera profesional</div>
+            </div>
+            <div class="container container-aprender-pasos">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 container-paso paso-oscuro d-flex flex-row align-items-center justify-content-center">
+                        <div class="container-paso-texto d-flex flex-column">
+                            <div class="container container-paso-title text-center">1. Conoce el mercado global y local con herramientas de análisis</div>
+                            <div class="container container-paso-description text-center">Aprende a importar con herramientas como Google ADS y Facebook ADS, que te permitirán visualizar los interés en tu localidad y así garantizar la efectividad de venta al importar de china</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 container-paso paso-claro d-flex flex-row align-items-center justify-content-center">
+                        <div class="container-paso-texto d-flex flex-column">
+                            <div class="container container-paso-title text-center">2. Aprende a identificar productos sin permisos especiales</div>
+                            <div class="container container-paso-description text-center">Genera mejores oportunidades de ventas al identificar cómo importar productos de China sin documentos especiales, así podrás ingresarlo al país destino sin problemas</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 container-paso paso-oscuro d-flex flex-row align-items-center justify-content-center">
+                        <div class="container-paso-texto d-flex flex-column">
+                            <div class="container container-paso-title text-center">3. Localiza proveedores confiables</div>
+                            <div class="container container-paso-description text-center">Conoce los verdaderos proveedores confiables que existen al importar, no solo se trata de Alibaba, hay muchos métodos que te enseñaremos para localizarlos y de ese modo importar al mejor precio y de manera confiable
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 container-paso paso-claro d-flex flex-row align-items-center justify-content-center">
+                        <div class="container-paso-texto d-flex flex-column">
+                            <div class="container container-paso-title text-center">4. Análisis de logística, costos e impuestos </div>
+                            <div class="container container-paso-description text-center">Verifica cúal será la estrategia más factible al analizar los costos al importar desde China hasta el país destino, como a su vez los métodos más  rentable para minimizar los precios de logística e impuestos</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 container-paso paso-oscuro d-flex flex-row align-items-center justify-content-center">
+                        <div class="container-paso-texto d-flex flex-column">
+                            <div class="container container-paso-title text-center">5. Documentación requerida ante la aduana</div>
+                            <div class="container container-paso-description text-center">Identifica los documentos para importar desde china y otros países a fin de estar preparado para los procesos aduaneros</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 container-paso paso-claro d-flex flex-row align-items-center justify-content-center">
+                        <div class="container-paso-texto d-flex flex-column">
+                            <div class="container container-paso-title text-center">6. Promociona tu importación</div>
+                            <div class="container container-paso-description text-center">Antes de la desestiba de mercancía  se deben consolidar los canales de ventas para una pronta comercialización de la importación</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="margin-top: 100px;">
+        <div class="container-lg">
+            <hr size="10">
+            <div class="container container-mensaje-importante text-center">
+                <div class="d">"Aprende de la mano de profesionales, tenemos</div>
+                <div class="d">20 años de experiencia, con importaciones</div>
+                <div class="d">y exportaciones diarias"</div>
+            </div>
+            <hr size="10">
+        </div>
+    </div>
+    <div class="container-fluid conteiner-banner-inscription-2">
+        <div class="container-lg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-7">
+                        <div class="container container-text-banner-inscripcion-2 text-center">
+                            <div><span class="banner-inscription-2-t1">Inscribete Ya!</span></div>
+                            <div class="banner-inscription-2-t2">Inversion $40 (160 soles)</div>
+                            <hr size="5"  width="50%" style="background-color: white; margin:auto;" class="d-none d-lg-flex">
+                            <hr size="5"  width="90%" style="background-color: white; margin:auto;" class="d-flex d-lg-none">
+                            <div class="banner-inscription-2-t3">Ahorra 15 Dolares</div>
+                            <hr size="5"  width="35%" style="background-color: white; margin:auto;" class="d-none d-lg-flex">
+                            <hr size="5"  width="60%" style="background-color: white; margin:auto;" class="d-flex d-lg-none">
+                            <div class="banner-inscription-2-t4">Valido: Septiembre 2021</div>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-5 align-self-center">
+                        <div class="container container-banner-suscription__button">
+                            <button class="banner-suscription-button" data-bs-toggle="modal" data-bs-target="#paymentModal">
+                                <div class="banner-suscription-button__text-1">Inscribete haciendo</div>
+                                <div class="banner-suscription-button__text-2">Click Aquí</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid container-servicios" id="servicios-section">
+        <div class="container-lg">
+            <div class="container-servicios__title text-center">
+                Servicios PIC CARGO
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-lg-4 p-0">
+                        <div class="container container-servicio d-flex flex-row justify-content-center">
+                            <div class="container-servicio-inner d-flex flex-row text-center justify-content-center">
+                                <div class="d-flex flex-column align-self-center">
+                                    <div class="icon-service d-flex flex-row justify-content-center"><img src="./icons/ICONO ADUANA.svg" alt="" width="70"></div>
+                                    <div class="name-service">Agencia <br> de Aduanas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4 p-0">
+                        <div class="container container-servicio d-flex flex-row justify-content-center">
+                            <div class="container-servicio-inner d-flex flex-row text-center justify-content-center">
+                                <div class="d-flex flex-column align-self-center">
+                                    <div class="icon-service d-flex flex-row justify-content-center"><img src="./icons/ICONO BARCO.svg" alt="" width="70"></div>
+                                    <div class="name-service">Transporte <br> maritimo</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4 p-0">
+                        <div class="container container-servicio d-flex flex-row justify-content-center">
+                            <div class="container-servicio-inner d-flex flex-row text-center justify-content-center">
+                                <div class="d-flex flex-column align-self-center">
+                                    <div class="icon-service d-flex flex-row justify-content-center"><img src="./icons/ICONO AVION.svg" alt="" width="70"></div>
+                                    <div class="name-service">Transporte <br> aereo</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4 p-0">
+                        <div class="container container-servicio d-flex flex-row justify-content-center">
+                            <div class="container-servicio-inner d-flex flex-row text-center justify-content-center">
+                                <div class="d-flex flex-column align-self-center">
+                                    <div class="icon-service d-flex flex-row justify-content-center"><img src="./icons/ICONO ALMACEN.svg" alt="" width="70"></div>
+                                    <div class="name-service">Almacen <br> aduanero</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4 p-0">
+                        <div class="container container-servicio d-flex flex-row justify-content-center">
+                            <div class="container-servicio-inner d-flex flex-row text-center justify-content-center">
+                                <div class="d-flex flex-column align-self-center">
+                                    <div class="icon-service d-flex flex-row justify-content-center"><img src="./icons/ICONO CONTENEDOR.svg" alt="" width="70"></div>
+                                    <div class="name-service">Importa y <br> exporta</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4 p-0">
+                        <div class="container container-servicio d-flex flex-row justify-content-center">
+                            <div class="container-servicio-inner d-flex flex-row text-center justify-content-center">
+                                <div class="d-flex flex-column align-self-center">
+                                    <div class="icon-service d-flex flex-row justify-content-center"><img src="./icons/ICONO DINERO CALCULADORA.svg" alt="" width="70"></div>
+                                    <div class="name-service">Costo de <br> Importacion</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid container-guia-section" id="guia-section">
+        <div class="container-lg">
+            <div class="container-title-guia text-center">
+                La mejor guia para <span class="title-guia-resaltado">empezar</span> <br> en el <span class="title-guia-resaltado">mundo de las importaciones!</span>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-6"><img src="./images/guia.png" alt="" width="100%"></div>
+                    <div class="col-12 col-lg-6 d-flex flex-row align-items-start">
+                        <div class="container">
+                            <div class="container-guia-text text-center">
+                                <div class="container-guia-t1" style=""><span class="titulo-guia__t1">Suscribete Aquí</span>  <br> <span class="titulo-guia__t1">y descarga ahora tu</span></div>
+                                <div class="container-guia-t2"><span class="titulo-guia__t2">Guía de</span>  <br><span class="titulo-guia__t2">Importaciones</span> </div>
+                            </div>
+                            <div class="container container-button-descargar-guia text-center">
+                                <button class="guia-button" data-bs-toggle="modal" data-bs-target="#guideModal">
+                                    <div class="container">
+                                        <div class="container-guia-button__t1">Descarga <br> GRATIS</div>
+                                        <div class="container-guia-button__t2">Click Aquí!</div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-light py-4" style="background-color: #1A3349;">
+        <div class="container">
+          <div class="row" style="font-family: 'Gotham';">
+            <div class="col-12 col-lg-4 text-center">
+                <a href="https://pic-importadores.com/" class="link-footer">
+                    Importaciones Grupales <img src="./icons/chevron-double-right.svg" alt="" style="color: white;">
+                </a>
+            </div>
+            <div class="col-12 col-lg-4 text-center">
+                <a href="https://www.pic-cargo.com/" class="link-footer">
+                    Nosotros <img src="./icons/chevron-double-right.svg"  alt="" style="color: white;">
+                </a>
+            </div>
+            <div class="col-12 col-lg-4 text-center">
+                <a href="https://www.calculadoradefletes.com/" class="link-footer">
+                    Calculadora de Fletes <img src="./icons/chevron-double-right.svg"  alt="" style="color: white;">
+                </a>
+            </div>
+          </div>
+        </div>
+    </footer>
+    <!-- Bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        
+    </script>
+  </body>
+</html>

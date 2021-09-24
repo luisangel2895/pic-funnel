@@ -1,0 +1,1112 @@
+/* Fonts */
+
+/* Gotham */
+    @font-face {
+        font-family: "Gotham";
+        src: url("./fonts/Gotham-Black.otf");
+        font-weight: 1000;
+    }
+    @font-face {
+        font-family: "Gotham";
+        src: url("./fonts/GothamBold.ttf");
+        font-weight: 700;
+    }
+    @font-face {
+        font-family: "Gotham";
+        src: url("./fonts/GothamMedium.ttf");
+        font-weight: 600;
+    }
+    @font-face {
+        font-family: "Gotham";
+        src: url("./fonts/GothamBook.ttf");
+        font-weight: 500;
+    }
+    @font-face {
+        font-family: "Gotham";
+        src: url("./fonts/GothamLight.ttf");
+        font-weight: 300;
+    }
+    @font-face {
+        font-family: "Gotham";
+        src: url("./fonts/GothamBookItalic.ttf");
+        font-style: italic;
+        font-weight: 500;
+    }
+
+/* FOOTER */
+.link-footer{
+    text-decoration: none;
+    color: white;
+}
+.link-footer:hover{
+    color: white;
+}
+/* hover buttons */
+.button-inscription:hover{
+    background-color: #137CEC;
+    box-shadow: 0px -1px 7px -1px rgba(0,0,0,0.29);
+    -webkit-box-shadow: 0px -1px 7px -1px rgba(0,0,0,0.29);
+    -moz-box-shadow: 0px -1px 7px -1px rgba(0,0,0,0.29);
+}
+.button-guide:hover{
+    background-color: #137CEC;
+    box-shadow: 0px -1px 7px -1px rgba(0,0,0,0.29);
+    -webkit-box-shadow: 0px -1px 7px -1px rgba(0,0,0,0.29);
+    -moz-box-shadow: 0px -1px 7px -1px rgba(0,0,0,0.29);
+}
+.banner-suscription-button:hover{
+    background-color: #137CEC;
+    box-shadow: 0px -1px 7px -1px rgba(0,0,0,0.29);
+    -webkit-box-shadow: 0px -1px 7px -1px rgba(0,0,0,0.29);
+    -moz-box-shadow: 0px -1px 7px -1px rgba(0,0,0,0.29);
+}
+/* Navbar styles */
+    .navbar{
+        background-color: #1A3349; border-bottom: 7px solid #4083CC;
+    }
+    .navbar__link{
+        font-size: 13px;
+        font-family: 'Gotham';
+        font-weight: 500;
+        color: white !important;
+    }
+
+/* MODAL GUIA */
+.container-modal-guia__title{
+    font-family: 'Gotham';
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.0;
+    color: #1A3349;
+}
+.container-modal-guia__subtitle{
+    font-weight: 500;
+    font-size: 30px;
+    margin-top: 20px;
+    line-height: 1.0;
+    color: #1A3349;
+}
+.modal-guia-subtitle__inner{
+    background-color: #F7DA19;
+    padding: 4px;
+}
+
+/* VIDEO SERCTION */
+#video-section{
+    background-color: #F2F2F2;
+}
+    /* title */
+    .title-container{
+        line-height: 1.0;
+        font-size:35px;
+        font-family: 'Gotham';
+        font-weight: 1000;
+        margin-top:10px;
+        color: #3D3D3D;
+    }
+    /* subtitle */
+    .subtitle-container{
+        margin-top: 15px;
+        width: 100%;
+    }
+    .subtitle-container__text{
+        width: 75%;
+        padding-right: 30px;
+        background-color: #348EEF;
+        font-family: 'Gotham';
+        font-weight: 500;
+        color: white;
+        font-size: 15px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .subtitle-container__icon-zoom{
+        width: 25%;
+    }
+    .container-icon-zoom__banner{
+        width: 100%;
+        color:#348EEF ;
+        background-color: #348EEF;
+        font-size: 25px;
+
+    }
+    .container-icon-zoom__image{
+        position: absolute;
+        margin-top: -10px;
+        width: 50px;
+        border: 3px solid white;
+        border-radius: 10px;
+        background-color: #348EEF;
+        padding: 2px;
+        box-shadow: -11px 8px 30px 1px rgba(0,0,0,0.41);
+        -webkit-box-shadow: -11px 8px 30px 1px rgba(0,0,0,0.41);
+        -moz-box-shadow: -11px 8px 30px 1px rgba(0,0,0,0.41);
+    }
+    .icon-zoom{
+        width: 100%;
+    }
+    /* contador */
+    .contador-container{
+        margin-top:15px;
+        font-size: 16px;
+        color: #929292;
+        font-family: 'Gotham';
+        font-weight: 600;
+    }
+    /* video */
+    .video-container{
+        margin-top: 20px;
+    }
+    .video-container__barra-top{
+        width: 70%;
+        height: 40px;
+        background-color: #348EEF;
+        display: none;
+    }
+    .video-container__barra-bottom{
+        margin-top:-5px;
+        width: 70%;
+        height: 70px;
+        display: none;
+        background-color: #348EEF;
+    }
+    .video-container__video{
+
+    }
+    .imagen-guia-banner-mobile{
+        width: 60%;
+        position: relative;
+        margin-bottom: -150px;;
+    }
+    /* inscribete ya */
+    .inscription-container{
+        height: 100%;
+        font-family: 'Gotham';
+    }
+    .inscription-container__title{
+        text-align: center;
+        color: #348EEF;
+        font-weight: 700;
+        font-size: 45px;
+        line-height: 1.0;
+        padding-bottom: 10px;
+    }
+    .inscription-container__subtitle{
+        color: #82898B;
+        font-weight: 500;
+        font-size: 25px;
+        margin-top:-5px;
+        margin-bottom: 20px;
+    }
+    .button-inscription{
+        background-color: #348EEF;
+        border: none;
+        border-radius: 10px;
+        width: 100%;
+        color: white;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        line-height: 1.0;
+    }
+    .button-inscription__text-1{
+        font-weight: 500;
+        font-size: 20px;
+    }
+    .button-inscription__text-2{
+        font-weight: 700;
+        font-size: 40px;
+    }
+    .inscription-container-ahorra{
+        margin-top: 25px;
+        width: 100%;
+        background-color: #F5DC18;
+        font-weight: 700;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        color: #40340E;
+        font-size: 25px;
+    }
+    .inscription-container-valido{
+        color: #82898B;
+        font-weight: 600;
+        margin-top: 10px;
+    }
+/* banner */
+    .container-banner{
+        color:white;
+        padding-top: 150px;
+        padding-bottom: 30px;
+    }
+    .container-banner__book{
+        width: 40%;
+    }
+    .imagen-guia-banner{
+        position: absolute;
+        width: 400px;
+        margin-top: -100px;
+        z-index: 10;
+    }
+    .container-banner__content{
+        width: 100%;
+    }
+    .banner-content__title{
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 1.0;
+        margin-bottom: 15px;
+    }
+    .banner-content__subtitle{
+        font-weight: 300;
+        font-size: 25px;
+        margin-top: -20px;
+    }
+    .button-guide{
+        width: 80%;
+        border: none;
+        background-color: #348EEF;
+        font-weight: 700;
+        color: white;
+        font-size: 25px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 15px;
+        margin-top: 15PX;
+        margin-bottom: 15px;
+    }
+    .banner-content__terminos{
+        color: #82898B;
+        font-weight: 600;
+        font-size: 12px;
+    }
+    /* MODAL PAYMENT */
+    .modal-payment-container{
+        border-radius: 10px;
+    }
+    .modal-payment-container-header{
+        background-color: #F0F0F0;;
+    }
+    .payment-container{
+        font-family: 'Gotham';
+    }
+    .payment-container-logo{
+    }
+    .payment-content-logo__logo{
+        background-color: white;
+        padding:20px;
+        border-radius: 10px;
+    }
+    .containeiner-card-number{
+        font-size: 14px;
+    }
+
+    .payment-form{
+        width: 100%;
+        border:none;
+        outline: none;
+        background-color: #F0F0F0;
+        font-size: 14px;
+        padding: 10px;
+    }
+    .container-card-data{
+        padding-top: 10px;
+        font-size: 14px;
+        margin-bottom: 50px;
+    }
+    .container-card-titular{
+        font-size: 14px;
+    }
+    .container-button-payment{
+        margin-top: 20px;
+    }
+    .button-payment{
+        width: 80%;
+        color: white;
+        border: none;
+        background-color: #348EEF;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .container-recordar-payment{
+        font-size: 13px;
+        margin-top: 10px;
+    }
+/* TESTIMONIOS */
+.container-testimonios{
+    font-family: 'Gotham';
+}
+.container-testimonios__title{
+    margin-top: 50px;
+    font-weight: 700;
+    font-size: 40px;
+    color: #345166;
+}
+.container-testimonios__subtitle{
+    font-size: 20px;
+    line-height: 1.0;
+}
+.container-testimonios-videos{
+    margin-top: 10px;
+}
+.container-testimonio{
+    margin-top: 30px;
+}
+.container-testimonio__video{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+}
+.iframe-testimonio{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+.container-testmonio__text{
+    padding: 10px;
+}
+.testimonio-text__name{
+    font-weight: 700;
+    color: #345166;
+    font-size: 20px;
+}
+.testimonio-text__cargo{
+    color: #345166;
+    font-size: 20px;
+}
+/* BANNER SUSCRIPTION */
+.container-banner-suscription{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-family: 'Gotham';
+}
+.container-banner-suscription__title{
+    font-weight: 700;
+    color: #345166;
+    font-size: 30px;
+    line-height: 1;
+    text-align: center;
+}
+.container-banner-suscription__subtitle{
+    font-size: 25px;
+    margin-top: 10px;
+    text-align: center;
+}
+.container-banner-suscription__button{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.banner-suscription-button{
+    background-color: #348EEF;
+    color: white;
+    font-family: 'Gotham';
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.banner-suscription-button__text-1{
+    font-size: 25px;
+}
+.banner-suscription-button__text-2{
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: -15px;
+}
+/* QUE APRENDERAS */
+.container-aprender{
+    margin-top: 100px;
+    font-family: 'Gotham';
+}
+.aprender-title__title{
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.0;
+    color: #345166
+}
+.aprender-title__subtitle{
+    font-weight: 500;
+    color: #345166;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.text-subtitle-pasos__resaltado{
+   background-color: #F3DA1A;
+   font-weight: 700;
+   padding-top: 3px;
+   padding-bottom: 3px;
+   padding-left: 5px;
+   padding-right: 5px;
+}
+.container-paso{
+    height: 400px;
+    padding: 20px;
+}
+.paso-oscuro{
+background-color: #1A3349;
+color: white;
+}
+.paso-claro{
+background-color: #E8E8E8;
+color: #1A3349;
+}
+.container-aprender-pasos{
+    margin-top: 50px;
+}
+.container-paso-title{
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 1.0;
+}
+.container-paso-description{
+    line-height: 1.0;
+    margin-top: 25px;
+    font-weight: 500;
+    font-size: 20px;
+}
+/* MENSAJE IMPORTANTE */
+.container-mensaje-importante{
+    color: #345166;
+    font-family: 'Gotham';
+    font-style: italic;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 1.0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+/* banner inscripcion 2 */
+.conteiner-banner-inscription-2{
+    background-color: #1A3349;
+    margin-top: 100px;
+}
+.container-text-banner-inscripcion-2{
+    font-family: 'Gotham';
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.banner-inscription-2-t1{
+    color: #1A3349;
+    background-color: #F3DA1A;
+    font-size: 40px;
+    font-weight: 700;
+}
+.banner-inscription-2-t2{
+    color: white;
+    font-weight: 500;
+    font-size: 25px;
+}
+.banner-inscription-2-t3{
+    font-weight: 700;
+    font-size: 25px;
+    color: #348EEF;
+    margin-top: 15px;
+}
+.banner-inscription-2-t4{
+    color: white;
+    font-weight: 500;
+}
+/* SERVICIOS */
+.container-servicios{
+    padding-top: 100px;
+    background-color:#E8E8E8;
+    padding-bottom: 100px;
+    font-family: 'Gotham';
+}
+.container-servicios__title{
+    font-weight: 700;
+    color: #1A3349;
+    font-size: 40px;
+    line-height: 1.0;
+}
+.container-servicio {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.container-servicio-inner{
+    margin-top: 50px;
+    background-color: white;
+    border:4px solid #DDDDDD;
+    width: 100%;
+    height: 278px;
+    border-radius: 15px;
+}
+.name-service{
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 1.0;
+    margin-top: 20px;
+}
+.icon-service{
+    height: 100px;
+}
+/* GUIA SECTION */
+.container-guia-section{
+    background-color: #1A3349;
+    padding-top: 70px;
+    font-family: 'Gotham';
+    margin-bottom: 150px;
+}
+.container-title-guia{
+    font-weight: 700;
+    color: white;
+    font-size: 40px;
+    line-height: 1.0;
+}
+.title-guia-resaltado{
+    background-color: #348EEF;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.container-guia-text {
+    font-family: 'Gotham';
+}
+.titulo-guia__t1{
+    font-weight: 700;
+    background-color: #F3DA1A;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 25px;
+}
+.titulo-guia__t2{
+    background-color: white;
+    font-weight: 1000;
+    color: #348EEF;
+    font-size: 35px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.guia-button{
+    border: none;
+    background-color: #348EEF;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    top:30px;
+}
+.container-guia-t1{
+    line-height: 1.0;
+    margin-top: 30px;
+}
+.container-guia-t2{
+    margin-top: 20px;
+    line-height: 1.0;
+}
+.container-button-descargar-guia{
+    margin-top: 30px;
+}
+.container-guia-button__t1{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.0;
+}
+.container-guia-button__t2{
+    font-size: 20px;
+}
+@media only screen and (min-width: 751px) {
+    .subtitle-container__text{
+        width: 70%;
+    }
+    .subtitle-container__icon-zoom{
+        width: 30%;
+    }
+}
+@media only screen and (min-width: 992px) {
+    
+/* VIDEO SERCTION */
+#video-section{
+    background-color: #F2F2F2;
+}
+    /* title */
+    .title-container{
+        line-height: 1.2;
+        font-size:50px;
+        font-family: 'Gotham';
+        font-weight: 1000;
+        margin-top:10px;
+        color: #3D3D3D;
+    }
+    /* subtitle */
+    .subtitle-container{
+        margin-top: 15px;
+        width: 50%;
+    }
+    .subtitle-container__text{
+        width: 70%;
+        padding-right: 30px;
+        background-color: #348EEF;
+        font-family: 'Gotham';
+        font-weight: 500;
+        color: white;
+        font-size: 25px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .subtitle-container__icon-zoom{
+        width: 30%;
+    }
+    .container-icon-zoom__banner{
+        width: 100%;
+        color:#348EEF ;
+        background-color: #348EEF;
+        font-size: 25px;
+
+    }
+    .container-icon-zoom__image{
+        position: absolute;
+        margin-top: -10px;
+        width: 50px;
+        border: 3px solid white;
+        border-radius: 10px;
+        background-color: #348EEF;
+        padding: 2px;
+        box-shadow: -11px 8px 30px 1px rgba(0,0,0,0.41);
+        -webkit-box-shadow: -11px 8px 30px 1px rgba(0,0,0,0.41);
+        -moz-box-shadow: -11px 8px 30px 1px rgba(0,0,0,0.41);
+    }
+    .icon-zoom{
+        width: 100%;
+    }
+    /* contador */
+    .contador-container{
+        margin-top:15px;
+        font-size: 16px;
+        color: #929292;
+        font-family: 'Gotham';
+        font-weight: 600;
+    }
+    /* video */
+    .video-container{
+        margin-top: 20px;
+    }
+    .video-container__barra-top{
+        width: 70%;
+        height: 40px;
+        background-color: #348EEF;
+        display: block;
+    }
+    .video-container__barra-bottom{
+        margin-top:-5px;
+        width: 70%;
+        height: 70px;
+        background-color: #348EEF;
+        display: block;
+
+    }
+    .video-container__video{
+
+    }
+    /* inscribete ya */
+    .inscription-container{
+        height: 100%;
+        font-family: 'Gotham';
+    }
+    .inscription-container__title{
+        color: #348EEF;
+        font-weight: 700;
+        font-size: 50px;
+    }
+    .inscription-container__subtitle{
+        color: #82898B;
+        font-weight: 500;
+        font-size: 25px;
+        margin-top:-5px;
+        margin-bottom: 20px;
+    }
+    .button-inscription{
+        background-color: #348EEF;
+        border: none;
+        border-radius: 10px;
+        width: 100%;
+        color: white;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .button-inscription__text-1{
+        font-weight: 500;
+        font-size: 25px;
+    }
+    .button-inscription__text-2{
+        font-weight: 700;
+        font-size: 50px;
+    }
+    .inscription-container-ahorra{
+        margin-top: 25px;
+        width: 100%;
+        background-color: #F5DC18;
+        font-weight: 700;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        color: #40340E;
+        font-size: 25px;
+    }
+    .inscription-container-valido{
+        color: #82898B;
+        font-weight: 600;
+        margin-top: 10px;
+    }
+/* banner */
+    .container-banner{
+        color:white;
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+    .container-banner__book{
+        width: 40%;
+    }
+    .imagen-guia-banner{
+        position: absolute;
+        width: 400px;
+        margin-top: -100px;
+        z-index: 10;
+    }
+    .container-banner__content{
+        width: 60%;
+    }
+    .banner-content__title{
+        font-weight: 600;
+        font-size: 35px;
+    }
+    .banner-content__subtitle{
+        font-weight: 300;
+        font-size: 35px;
+        margin-top: -20px;
+    }
+    .button-guide{
+        width: 80%;
+        border: none;
+        background-color: #348EEF;
+        font-weight: 700;
+        color: white;
+        font-size: 25px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 15px;
+        margin-top: 15PX;
+        margin-bottom: 15px;
+    }
+    .banner-content__terminos{
+        color: #82898B;
+        font-weight: 600;
+        font-size: 12px;
+    }
+    /* MODAL PAYMENT */
+    .modal-payment-container{
+        border-radius: 10px;
+    }
+    .modal-payment-container-header{
+        background-color: #F0F0F0;;
+    }
+    .payment-container{
+        font-family: 'Gotham';
+    }
+    .payment-container-logo{
+    }
+    .payment-content-logo__logo{
+        background-color: white;
+        padding:20px;
+        border-radius: 10px;
+    }
+    .containeiner-card-number{
+        font-size: 14px;
+    }
+
+    .payment-form{
+        width: 100%;
+        border:none;
+        outline: none;
+        background-color: #F0F0F0;
+        font-size: 14px;
+        padding: 10px;
+    }
+    .container-card-data{
+        padding-top: 10px;
+        font-size: 14px;
+        margin-bottom: 50px;
+    }
+    .container-card-titular{
+        font-size: 14px;
+    }
+    .container-button-payment{
+        margin-top: 20px;
+    }
+    .button-payment{
+        width: 80%;
+        color: white;
+        border: none;
+        background-color: #348EEF;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .container-recordar-payment{
+        font-size: 13px;
+        margin-top: 10px;
+    }
+/* TESTIMONIOS */
+.container-testimonios{
+    font-family: 'Gotham';
+}
+.container-testimonios__title{
+    margin-top: 150px;
+    font-weight: 700;
+    font-size: 60px;
+    color: #345166;
+}
+.container-testimonios__subtitle{
+    font-size: 30px;
+}
+.container-testimonios-videos{
+    margin-top: 10px;
+}
+.container-testimonio{
+    margin-top: 30px;
+}
+.container-testimonio__video{
+}
+.container-testmonio__text{
+    padding: 10px;
+}
+.testimonio-text__name{
+    font-weight: 700;
+    color: #345166;
+    font-size: 20px;
+}
+.testimonio-text__cargo{
+    color: #345166;
+    font-size: 20px;
+}
+/* BANNER SUSCRIPTION */
+.container-banner-suscription{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-family: 'Gotham';
+}
+.container-banner-suscription__title{
+    font-weight: 700;
+    color: #345166;
+    font-size: 45px;
+    line-height: 1;
+    text-align: left;
+}
+.container-banner-suscription__subtitle{
+    font-size: 30px;
+    margin-top: 10px;
+    text-align: left;
+}
+.container-banner-suscription__button{
+    text-align: left;
+    margin-bottom: 0px;
+}
+.banner-suscription-button{
+    background-color: #348EEF;
+    color: white;
+    font-family: 'Gotham';
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.banner-suscription-button__text-1{
+    font-size: 25px;
+}
+.banner-suscription-button__text-2{
+    font-size: 40px;
+    font-weight: 700;
+    margin-top: -15px;
+}
+/* QUE APRENDERAS */
+.container-aprender{
+    margin-top: 100px;
+    font-family: 'Gotham';
+}
+.aprender-title__title{
+    font-weight: 700;
+    font-size: 60px;
+    color: #345166
+}
+.aprender-title__subtitle{
+    font-weight: 500;
+    color: #345166;
+    font-size: 30px;
+    margin-top: -10px;
+}
+.text-subtitle-pasos__resaltado{
+   background-color: #F3DA1A;
+   font-weight: 700;
+   padding-top: 3px;
+   padding-bottom: 3px;
+   padding-left: 5px;
+   padding-right: 5px;
+}
+.container-paso{
+    height: 400px;
+    padding: 20px;
+}
+.paso-oscuro{
+background-color: #1A3349;
+color: white;
+}
+.paso-claro{
+background-color: #E8E8E8;
+color: #1A3349;
+}
+.container-aprender-pasos{
+    margin-top: 50px;
+}
+.container-paso-title{
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 1.0;
+}
+.container-paso-description{
+    line-height: 1.0;
+    margin-top: 25px;
+    font-weight: 500;
+    font-size: 20px;
+}
+/* MENSAJE IMPORTANTE */
+.container-mensaje-importante{
+    color: #345166;
+    font-family: 'Gotham';
+    font-style: italic;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 1.0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+/* banner inscripcion 2 */
+.conteiner-banner-inscription-2{
+    background-color: #1A3349;
+    margin-top: 100px;
+}
+.container-text-banner-inscripcion-2{
+    font-family: 'Gotham';
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.banner-inscription-2-t1{
+    color: #1A3349;
+    background-color: #F3DA1A;
+    font-size: 50px;
+    font-weight: 700;
+}
+.banner-inscription-2-t2{
+    color: white;
+    font-weight: 500;
+    font-size: 27px;
+}
+.banner-inscription-2-t3{
+    font-weight: 700;
+    font-size: 25px;
+    color: #348EEF;
+    margin-top: 15px;
+}
+.banner-inscription-2-t4{
+    color: white;
+    font-weight: 500;
+}
+/* SERVICIOS */
+.container-servicios{
+    padding-top: 100px;
+    background-color:#E8E8E8;
+    padding-bottom: 100px;
+    font-family: 'Gotham';
+}
+.container-servicios__title{
+    font-weight: 700;
+    color: #1A3349;
+    font-size: 60px;
+}
+.container-servicio-inner{
+    margin-top: 50px;
+    background-color: white;
+    border:4px solid #DDDDDD;
+    width: 255px;
+    height: 278px;
+    border-radius: 15px;
+}
+.name-service{
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 1.0;
+    margin-top: 20px;
+}
+.icon-service{
+    height: 100px;
+}
+/* GUIA SECTION */
+.container-guia-section{
+    background-color: #1A3349;
+    padding-top: 70px;
+    height: 500px;
+    font-family: 'Gotham';
+    margin-bottom: 300px;
+}
+.container-title-guia{
+    font-weight: 500;
+    color: white;
+    font-size: 45px;
+    line-height: 1.0;
+}
+.title-guia-resaltado{
+    background-color: #348EEF;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.container-guia-text {
+    font-family: 'Gotham';
+}
+.titulo-guia__t1{
+    font-weight: 700;
+    background-color: #F3DA1A;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 25px;
+}
+.titulo-guia__t2{
+    background-color: white;
+    font-weight: 1000;
+    color: #348EEF;
+    font-size: 50px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.guia-button{
+    border: none;
+    background-color: #348EEF;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.container-guia-t1{
+    line-height: 1.0;
+    margin-top: 70px;
+}
+.container-guia-t2{
+    margin-top: 20px;
+    line-height: 1.0;
+}
+.container-button-descargar-guia{
+    margin-top: 30px;
+}
+.container-guia-button__t1{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.0;
+}
+.container-guia-button__t2{
+    font-size: 20px;
+}
+
+}
